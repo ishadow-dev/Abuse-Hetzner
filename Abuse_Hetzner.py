@@ -81,7 +81,7 @@ while answer == "yes":
                 elif choice == 3:
                         run(["ufw", "disable"], check=True)
                         print("Abuse Fixer has disabled...")
-                elif choice == 4:
+                elif choice == 0:
                         break
                 else:
                         print("Number is invalid!")
