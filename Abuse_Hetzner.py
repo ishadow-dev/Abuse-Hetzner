@@ -57,28 +57,37 @@ update()
 # Loop to run the script
 answer = "yes"
 while answer == "yes":
-        loader()
-        choice = int(input("Please choose an option:"))
+        try:     
+                loader()
+                choice = int(input("Please choose an option:"))
 
-        if choice == 1:
-                number_config = int(input("Number of config : "))
-                for i in range(1, number_config + 1):
-                        config_port = int(input(f"Enter Config port {i} ( example : 1890,1880,... ): "))
-                ssh_port = int(input("Enter SSH port : "))
+                if choice == 1:
+                        number_config = int(input("Number of config : "))
+                        for i in range(1, number_config + 1):
+                                config_port = int(input(f"Enter Config port {i} : "))
+                                config = f"ufw allow {config_port}"
+                                run(config, shell=True, check=True, stdout=PIPE, stderr=PIPE)
+                        ssh_port = int(input("Enter SSH port : "))
+                        ssh = f"ufw allow {ssh_port}"
 
-                config = f"ufw allow {config_port}"
-                ssh = f"ufw allow {ssh_port}"
+                        run(ssh, shell=True, check=True, stdout=PIPE, stderr=PIPE)
+                        run(["ufw", "enable"], check=True)
+                        print("The Abuse Was Fixed...")
 
-                run(config, shell=True, check=True, stdout=PIPE, stderr=PIPE)
-                run(ssh, shell=True, check=True, stdout=PIPE, stderr=PIPE)
-                run(["ufw", "enable"], check=True)
+                elif choice == 2:
+                        run(["ufw", "status"], check=True)
 
-                print("The Abuse Was Fixed...")
-        elif choice == 2:
-                run(["ufw", "status"], check=True)
-        elif  choice == 3:
-                run(["ufw", "disable"], check=True)
-                print("Abuse Fixer has disabled")
-        else:
-                print("Number is invalid!")
-        answer = input("Do you want to continue... (yes/no)-(Default yes): ")
+                elif choice == 3:
+                        run(["ufw", "disable"], check=True)
+                        print("Abuse Fixer has disabled...")
+                else:
+                        print("Number is invalid!")
+
+                answer = input("Do you want to continue... (yes/no)-(Default yes): ").lower()
+                
+                if answer == "no":
+                        answer = "no"
+                else:
+                        answer = "yes"
+        except:
+                print("Please Enter Number!")
