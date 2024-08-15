@@ -20,7 +20,7 @@ def loader(): # Function to display information about the server and menu
         print("| 1 - Abuse Fixer                                                                     |")
         print("| 2 - Status                                                                          |")
         print("| 3 - Unistall                                                                        |")
-        print("| 0 - Exit                                                                        |")
+        print("| 0 - Exit                                                                            |")
         print("+-------------------------------------------------------------------------------------+")
 
 def update(): # Function to update server
@@ -60,7 +60,7 @@ answer = "yes"
 while answer == "yes":
         try:     
                 loader()
-                choice = int(input("Please choose an option:"))
+                choice = int(input("Please choose an option: "))
 
                 if choice == 1:
                         number_config = int(input("Number of config : "))
