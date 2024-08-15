@@ -20,6 +20,7 @@ def loader(): # Function to display information about the server and menu
         print("| 1 - Abuse Fixer                                                                     |")
         print("| 2 - Status                                                                          |")
         print("| 3 - Unistall                                                                        |")
+        print("| 0 - Exit                                                                        |")
         print("+-------------------------------------------------------------------------------------+")
 
 def update(): # Function to update server
@@ -80,6 +81,8 @@ while answer == "yes":
                 elif choice == 3:
                         run(["ufw", "disable"], check=True)
                         print("Abuse Fixer has disabled...")
+                elif choice == 4:
+                        break
                 else:
                         print("Number is invalid!")
 
