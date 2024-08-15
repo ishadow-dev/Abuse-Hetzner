@@ -5,7 +5,6 @@
 ```
 
 curl -O https://raw.githubusercontent.com/ishadow-dev/Abuse-Hetzner/main/Abuse_Hetzner.py && python3 Abuse_Hetzner.py
-
 ```
 
 ## Languages
