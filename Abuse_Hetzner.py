@@ -11,7 +11,7 @@ def loader(): # Function to display information about the server and menu
         print("|   / /\ \  | '_ \ | | | |/ __| / _ \   |  __  | / _ \| __||_  /| '_ \  / _ \| '__|   |")
         print("|  / ____ \ | |_) || |_| |\__ \|  __/   | |  | ||  __/| |_  / / | | | ||  __/| |      |")
         print("| /_/    \_\|_.__/  \__,_||___/ \___|   |_|  |_| \___| \__|/___||_| |_| \___||_|      |")
-        print("| Telegram : @shadow_Y_T                                                              |")
+        print("| Telegram : @iliyadevsh                                                              |")
         print("+-------------------------------------------------------------------------------------+")
         print(f"|Server Country: {server_country}                                                    |")
         print(f"|Server IP: {server_ip}                                                              |")
